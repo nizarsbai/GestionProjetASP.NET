@@ -1,0 +1,72 @@
+﻿@model GestionProjet.Web.Models.EmployeDto
+
+
+<form asp-action="EmployeCreate">
+    <div class="container border p-3">
+        <h1 class="text-primary">Create employe</h1>
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-2">
+                <label asp-for="firstName" class="control-label p-2" style ="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="firstName" class="form-control" />
+                <span asp-validation-for="firstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="lasttName" class="control-label p-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="lasttName" class="form-control" />
+                <span asp-validation-for="lasttName" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="gender" class="control-label p-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="gender" class="form-control" />
+                <span asp-validation-for="gender" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="description" class="control-label p-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                    <label asp-for="salaire" class="control-label p-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="salaire" class="form-control" />
+                <span asp-validation-for="salaire" class="text-danger"></span>
+            </div>
+
+                <div class="col-2">
+                    <label asp-for="ImageURL" class="control-label p-2" style="font-size:20px;"></label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="ImageURL" class="form-control" />
+                    <span asp-validation-for="ImageURL" class="text-danger"></span>
+                </div>
+
+                <div class="col-5 offset-2">
+                <a asp-action="EmployeIndex" class="btn-primary btn form-control">
+                    Back To List
+                </a>
+            </div>
+
+                <div class="col-5">
+                    <input type="submit" value="Create" class="btn btn-success form-control"/>
+                </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

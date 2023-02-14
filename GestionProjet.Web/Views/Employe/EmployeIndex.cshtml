@@ -1,0 +1,46 @@
+﻿@model IEnumerable<GestionProjet.Web.Models.EmployeDto>
+    <div class="container p-4 border">
+        <div class="row pb-2">
+            <div class="col">
+                <h1 class="text-primary">Employees List</h1>
+            </div>
+            <div class="col text-end pt-1">
+                <a asp-action="EmployeCreate" class="btn btn-outline-primary"><i class="fas fa-plus"></i>Create New Employe</a>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <!--employeId ferstName lastname gender description salair iamageURL-->
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Description</th>
+                    <th>Salaire</th>
+                    <th>Image Url</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                <tr>
+                    <td>@item.firstName</td>
+                    <td>@item.lasttName</td>
+                    <td>@item.gender</td>
+                    <td>@item.description</td>
+                    <td>@item.salaire</td>
+                    <td>@item.ImageURL</td>
+                    <td>
+                        <a asp-action="EmployeEdit" class="btn btn-success" asp-route-employeId="@item.EmployeId">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                         <a asp-action="EmployeDelete" class="btn btn-danger" asp-route-employeId="@item.EmployeId">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
