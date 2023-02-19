@@ -42,7 +42,7 @@ namespace GestionProjet.Web.Controllers
             var response=await _employeService.CreateEmployeAsync<EmployeDto>(model);
             if (response!=null && response.isSuccess)
                 return RedirectToAction(nameof(EmployeIndex));
-            return View();
+            return View(model);
         }
 
         public async Task<IActionResult> EmployeEdit(int employeId)
